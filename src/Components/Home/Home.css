@@ -45,6 +45,23 @@
     border: 3px solid #007ACC;
 }
 
+.sector-selection{
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+}
+.sector-selection label{
+    font-size: 22px ;
+    font-weight: 600;
+}
+.sector-selection select{
+    width: 60%;
+    padding: 10px 15px;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+}
+
 .form-check{
     margin-top: 25px;
 }

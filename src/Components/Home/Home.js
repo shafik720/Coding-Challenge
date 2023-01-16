@@ -12,8 +12,8 @@ const Home = () => {
                         <label htmlFor="name">Name :</label>
                         <input type="text" name="name" id="" />
                     </div>
-                    <div className="">
-                        <label htmlFor="">Sectors</label>
+                    <div className="sector-selection">
+                        <label htmlFor="">Sector : </label>
                         <select name="pets" size="4">
                             <optgroup label="4-legged pets">
                                 <option value="dog">Dog</option>
@@ -28,7 +28,7 @@ const Home = () => {
                     </div>
                     <div className="form-check">
                         <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                        <label className="form-check-label" for="flexCheckChecked">
+                        <label className="form-check-label fw-bold" for="flexCheckChecked">
                             Agree to terms
                         </label>
                     </div>
