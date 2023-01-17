@@ -4,7 +4,6 @@
     padding-bottom: 20px;
 }
 .home-div h2{
-    /* margin-top: 20px; */
     font-size: 20px;
     color: #0F2946;
     font-weight: 500;
@@ -29,7 +28,7 @@
 .name-input-div label{
     font-weight: 700;
     font-size: 22px;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 .name-input-div input{
     width: 100%;
@@ -54,7 +53,7 @@ Sector selections
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
 }
 .sector-selection label{
     font-size: 22px ;
@@ -71,9 +70,7 @@ Sector selections
     height: 50px;
 }
 
-.form-check{
-    margin-top: 25px;
-}
+
 
 .strong{
     pointer-events: none;

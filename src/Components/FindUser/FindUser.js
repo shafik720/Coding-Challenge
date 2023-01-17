@@ -20,8 +20,9 @@ const FindUser = () => {
         setTimeout(() => {
             if (existingUser) {
                 document.querySelector('.loading-div').classList.remove('active');
-                navigate('/findSingleUser');
+                navigate(`/findSingleUser/${searchName}`);
             } else {
+                // a popup or toast with error message will show if the database does not have the user
                 toast.error('User Not Found', {
                     position: "bottom-center",
                     autoClose: 3000,
