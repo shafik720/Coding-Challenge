@@ -1,6 +1,25 @@
 [
-  {"deta": [10,"\u00A0 \u00A0 audi"]},
-  {"deta": [2,"\u00A0 \u00A0 audi"]},
-  {"deta": [50,"\u00A0 \u00A0 audi"]}
+  {"deta": [1,"Manufacturing"]},
+  {"deta": [19,"\u00A0 \u00A0 \u00A0 \u00A0 Construction materials"]},
+  {"deta": [18,"\u00A0 \u00A0 \u00A0 \u00A0 Electronics and Optics"]},
+  {"deta": [6,"\u00A0 \u00A0 \u00A0 \u00A0 Food and Beverage"]},
+  {"deta": [342,"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 Bakery &; confectionery products"]},
+  {"deta": [43,"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 Beverages"]},
+  {"deta": [42,"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 Fish &; fish products "]},
+  {"deta": [40,"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 Meat &; meat products"]},
+  {"deta": [39,"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 Milk &; dairy products"]},
+  {"deta": [437,"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 Other"]},
+  {"deta": [378,"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 Sweets &; snack food"]},
+  {"deta": [13,"\u00A0 \u00A0 \u00A0 \u00A0 Furniture "]},
+  {"deta": [389,"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 Bathroom/sauna "]},
+  {"deta": [385,"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 Bedroom"]},
+  {"deta": [390,"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 Children's room "]},
+
+
+
+
+
+
+  {"deta": [437,"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 Other"]}
 
 ]
