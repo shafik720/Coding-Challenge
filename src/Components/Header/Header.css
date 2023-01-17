@@ -15,8 +15,9 @@
     padding: 5px 15px;
     border-radius: 5px;
     transition: all 0.2s ease;
+    font-weight: 500;
 }
-.header-div a:hover{
+.header-div a:hover, .header-div a.active{
     color: black;
     background: #FFBA00;
 }
