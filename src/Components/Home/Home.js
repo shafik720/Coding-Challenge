@@ -6,6 +6,9 @@ const Home = () => {
         e.preventDefault();
         const name = e.target.name.value;
         const sector = e.target.sectors.value;
+        if(sector == 0){
+            return;
+        }
         console.log(name, sector);
     }
 
@@ -36,21 +39,40 @@ const Home = () => {
                     </div>
                     <div className="sector-selection">
                         <label htmlFor="">Sector : </label>
-                        <select name="sectors" >
-    {/* ------------------ Sectors selection box will be shown here -------------- */}
+                        {/* <select name="sectors" >
+                            
                             {
-                                catagory.map(index=><option 
-                                    key= {index.deta[0]}
-                                    value={index.deta[0]} 
-                                    disabled ={index.deta[0]==1 && true}
+                                catagory.map(index => <option
+                                    key={index.deta[0]}
+                                    value={index.deta[0]}
+                                    disabled={index.deta[0] == 1 && true}
+                                    className={
+                                        index.deta[0] === 1 ||
+                                            index.deta[0] === 6 ||
+                                            index.deta[0] === 13
+                                            ? 'strong' : ''}
+                                >{index.deta[1]}</option>)
+                            }
+                        </select> */}
+    {/* ------------------ Sectors selection box will be shown here -------------- */}
+                        <select className="form-select" aria-label="Default select example" name="sectors">
+                            <option value='0'>Open this select menu</option>
+                            {
+                                catagory.map(index => <option
+                                    key={index.deta[0]}
+                                    value={index.deta[0]}
+                                    disabled={
+                                        index.deta[0] === 1 ||
+                                        index.deta[0] === 6 ||
+                                        index.deta[0] === 13
+                                        && true}
                                     className={
                                         index.deta[0] === 1 ||
                                         index.deta[0] === 6 ||
-                                        index.deta[0] === 13 
-                                        ?'strong' : ''}
-                                    >{index.deta[1]}</option>)
+                                        index.deta[0] === 13
+                                        ? 'strong' : ''}
+                                >{index.deta[1]}</option>)
                             }
-                            
                         </select>
                     </div>
                     <div className="form-check">

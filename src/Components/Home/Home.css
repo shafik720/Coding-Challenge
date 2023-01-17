@@ -33,9 +33,9 @@
 .name-input-div input{
     width: 100%;
     box-sizing: border-box;
-    height: 50px;
+    height: 40px;
     outline: none;
-    border: 3px solid #456A82;
+    border: 3px solid #ddd;
     border-radius: 10px;
     padding: 5px 15px;
     font-size: 18px;
@@ -45,17 +45,22 @@
     border: 3px solid #007ACC;
 }
 
+
+/* -----------------------------
+Sector selections 
+---------------------------------*/
 .sector-selection{
     display: flex;
     justify-content: flex-start;
-    gap: 30px;
+    flex-direction: column;
+    gap: 15px;
 }
 .sector-selection label{
     font-size: 22px ;
     font-weight: 600;
 }
 .sector-selection select{
-    width: 60%;
+    width: 100%;
     /* padding: 10px 15px; */
     border: 3px solid #ddd;
     border-radius: 10px;
