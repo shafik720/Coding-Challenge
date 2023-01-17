@@ -56,14 +56,23 @@
 }
 .sector-selection select{
     width: 60%;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     border: 3px solid #ddd;
     border-radius: 10px;
     outline: none;
 }
+.sector-selection select option{
+    height: 50px;
+}
 
 .form-check{
     margin-top: 25px;
+}
+
+.strong{
+    pointer-events: none;
+    color: blue;
+    font-weight: 700;
 }
 
 /* styling save button */
