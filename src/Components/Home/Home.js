@@ -40,9 +40,10 @@ const Home = () => {
     {/* ------------------ Sectors selection box will be shown here -------------- */}
                             {
                                 catagory.map(index=><option 
+                                    key= {index.deta[0]}
                                     value={index.deta[0]} 
-                                    disabled ={index.deta[0]==3 && 'true'}
-                                    className={index.deta[0]==3 && 'strong'}
+                                    disabled ={index.deta[0]==3 && true}
+                                    className={index.deta[0]==3 ?'strong' : ''}
                                     >{index.deta[1]}</option>)
                             }
                             
