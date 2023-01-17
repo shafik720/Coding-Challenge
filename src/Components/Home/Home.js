@@ -3,11 +3,17 @@ import { addToDb } from '../Utilities/fakeDb';
 import './Home.css';
 
 const Home = () => {
+    const[agree, setAgree] = useState(false);
+
+    // when user clicked save button this function will be triggered 
     const handleSaveButton = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const sector = e.target.sectors.value;
         if(sector == 0){
+            return;
+        }else if(!agree){
+            console.log('You have not agreed to terms');
             return;
         }
         addToDb(name, sector, true);
@@ -78,7 +84,7 @@ const Home = () => {
                         </select>
                     </div>
                     <div className="form-check">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                        <input onClick={()=>setAgree(!agree)} className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
                         <label className="form-check-label fw-bold" htmlFor="flexCheckChecked">
                             Agree to terms
                         </label>
