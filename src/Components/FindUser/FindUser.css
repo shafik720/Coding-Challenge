@@ -16,3 +16,12 @@
     font-size: 18px;
     margin: 25px auto ;
 }
+
+
+/* spinner styles */
+.loading-div{
+    display: none;
+}
+.loading-div.active{
+    display: block;
+}
