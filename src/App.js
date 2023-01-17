@@ -11,12 +11,14 @@ function App() {
     <div>
       <div className="main-div">
         <Header></Header>
-        <Routes>
-          <Route path='/' element={<Home></Home>}></Route>
-          <Route path='/findUser' element={<FindUser></FindUser>}></Route>
+        <div className="main-div-second">
+          <Routes>
+            <Route path='/' element={<Home></Home>}></Route>
+            <Route path='/findUser' element={<FindUser></FindUser>}></Route>
 
-          <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
-        </Routes>        
+            <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
+          </Routes>
+        </div>
       </div>
     </div>
   );

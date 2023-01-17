@@ -1,7 +1,7 @@
 
 
 .home-div{
-    padding: 0 10px 35px 10px;
+    padding-bottom: 20px;
 }
 .home-div h2{
     /* margin-top: 20px; */
@@ -82,7 +82,7 @@ Sector selections
 }
 
 /* styling save button */
-.form-div button{
+.submit-button{
     width: 80%;
     border: none;
     box-sizing: border-box;

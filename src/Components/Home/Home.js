@@ -89,7 +89,7 @@ const Home = () => {
                             Agree to terms
                         </label>
                     </div>
-                    <button type="submit">Save</button>
+                    <button className="submit-button" type="submit">Save</button>
                 </form>
             </div>
         </div>

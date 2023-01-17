@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className="header-div">
             <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Home</NavLink>
-            <NavLink to="/findUser" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>See User</NavLink>
+            <NavLink to="/findUser" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>See a User</NavLink>
             {/* <Link to="/">Home</Link> */}
         </div>
     );
