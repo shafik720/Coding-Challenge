@@ -18,12 +18,12 @@ const Home = () => {
             .then(data => {
                 setCatagory(data);
                 setIsLoading(false);
-                console.log(catagory);
             });
     }, [isLoading]);
     if (isLoading) {
         return <div>Loading...</div>;
     }
+
     return (
         <div className="home-div">
             <h2>Add Your Information Here : </h2>
@@ -42,8 +42,12 @@ const Home = () => {
                                 catagory.map(index=><option 
                                     key= {index.deta[0]}
                                     value={index.deta[0]} 
-                                    disabled ={index.deta[0]==3 && true}
-                                    className={index.deta[0]==3 ?'strong' : ''}
+                                    disabled ={index.deta[0]==1 && true}
+                                    className={
+                                        index.deta[0] === 1 ||
+                                        index.deta[0] === 6 ||
+                                        index.deta[0] === 13 
+                                        ?'strong' : ''}
                                     >{index.deta[1]}</option>)
                             }
                             
