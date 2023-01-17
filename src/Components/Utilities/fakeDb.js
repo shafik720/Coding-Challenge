@@ -1,6 +1,7 @@
-// use session storage to manage cart data
-const addToDb = (name, id, agree) =>{  
 
+
+// this function will add user to database
+const addToDb = (name, id, agree) =>{  
     let dbUser = JSON.parse(sessionStorage.getItem('db-user') || '[]');
 
     // add data to storage
@@ -17,26 +18,24 @@ const addToDb = (name, id, agree) =>{
     }else{
         console.log('user already exists !');
     }
-
-    // if(dbUser.userName === userName){
-    //     console.log('user already exists!');
-    // }else{
-    //     sessionStorage.setItem('db-usert', JSON.stringify(totalPacakge));
-    // }
-    
-    // const quantity = shoppingCart[id];
-    // if(quantity){
-    //     const newQuantity = quantity + 1;
-    //     shoppingCart[id] = newQuantity;
-    // }
-    // else{
-    //     shoppingCart[id] = 1;
-    // }
-    
 }
 
+// this function will get user from database
+function getFromDb(name){
+    let dbUser = JSON.parse(sessionStorage.getItem('db-user') || '[]');
+
+    const userName = name;
+    const existingUser = dbUser.find(user=> user.userName === userName);
+    // if(!existingUser){
+    //     console.log('user not found');
+    // }else{
+    //     return dbUser;
+    // }
+    return existingUser;
+}
 
 
 export {
     addToDb, 
+    getFromDb
 }

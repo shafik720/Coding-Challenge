@@ -1,6 +1,6 @@
 
 
-.find-user-div{
+.find-user-div-form{
     display: flex;
     flex-direction: column;
     justify-content: center !important;
@@ -14,5 +14,5 @@
     height: 40px;
     border-radius: 5px;
     font-size: 18px;
-    margin: 25px auto;
+    margin: 25px auto ;
 }
