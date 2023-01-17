@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb } from '../Utilities/fakeDb';
 import './Home.css';
 
 const Home = () => {
@@ -9,7 +10,8 @@ const Home = () => {
         if(sector == 0){
             return;
         }
-        console.log(name, sector);
+        addToDb(name, sector, true);
+        // console.log(name, sector);
     }
 
     const [catagory, setCatagory] = useState([]);
@@ -29,7 +31,7 @@ const Home = () => {
 
     return (
         <div className="home-div">
-            <h2>Add Your Information Here : </h2>
+            <h2>Please enter your name and pick the Sectors you are currently involved in : </h2>
             <hr />
             <div className="form-div">
                 <form action="" onSubmit={handleSaveButton}>
@@ -56,7 +58,7 @@ const Home = () => {
                         </select> */}
     {/* ------------------ Sectors selection box will be shown here -------------- */}
                         <select className="form-select" aria-label="Default select example" name="sectors">
-                            <option value='0'>Open this select menu</option>
+                            <option value='0'>Select a Sector</option>
                             {
                                 catagory.map(index => <option
                                     key={index.deta[0]}
