@@ -8,6 +8,7 @@ import Header from './Components/Header/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FindSingleUser from './Components/FindUser/FindSingleUser/FindSingleUser';
+import EditUser from './Components/EditUser/EditUser';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path='/' element={<Home></Home>}></Route>
             <Route path='/findUser' element={<FindUser></FindUser>}></Route>
             <Route path='/findSingleUser/:userName' element={<FindSingleUser></FindSingleUser>}></Route>
+            <Route path='/editUser/:userName' element={<EditUser></EditUser>}></Route>
 
             <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
           </Routes>

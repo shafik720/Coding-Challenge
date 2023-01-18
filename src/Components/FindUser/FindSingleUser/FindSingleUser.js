@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { getFromDb } from '../../Utilities/fakeDb';
 import useCatagory from '../../Utilities/Hooks/useCatagory';
 import './FindSingleUser.css';
 
 const FindSingleUser = () => {
     const { userName } = useParams();
+    const navigate = useNavigate();
 
+    // getting saved user data from database
     const user = getFromDb(userName);
 
     // setting up a loading screen before loading the sector catagory
@@ -15,12 +17,15 @@ const FindSingleUser = () => {
     // this hook will get all the data for sector catagory
     const [catagory, setCatagory] = useCatagory(isLoading, setIsLoading);
 
-    catagory.map(index => console.log(index.deta[1]))
-
     if (isLoading) {
         return <div>Loading...</div>;
     }
 
+    // Edit functionality
+    const handleEditButton = (username) => {
+        const url = `/editUser/${username}`;
+        navigate(url);
+    }
     return (
         <div>
             <h5 className='mt-4'>User Details : </h5>
@@ -38,7 +43,7 @@ const FindSingleUser = () => {
                         {/* Showing user's Sectors */}
                         <tr   className=''>
                             <td className='fw-bold text-start'>Sector :</td>
-                            <td className='strong-text1 text-end'>{catagory.map(index => <p>{index.deta[0] == user?.catagoryId && index.deta[1]}</p>)}</td>
+                            <td className='strong-text1 text-end'>{catagory.map(index => <p key={index.deta[0]}>{index.deta[0] == user?.catagoryId && index.deta[1]}</p>)}</td>
                         </tr>
                         {/* Showing user agreement */}
                         <tr   className=''>
@@ -47,7 +52,7 @@ const FindSingleUser = () => {
                         </tr>
                     </tbody>
                 </table>
-                <button className="edit-button my-5">Edit This User</button>
+                <button onClick={()=>handleEditButton(user.userName)} className="edit-button my-5">Edit This User</button>
             </div>
         </div>
     );
