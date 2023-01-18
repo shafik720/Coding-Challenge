@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { addToDb } from '../Utilities/fakeDb';
 import useCatagory from '../Utilities/Hooks/useCatagory';
 import LoadingSpinner from '../Utilities/LoadingSpinner/LoadingSpinner';
@@ -13,12 +14,44 @@ const Home = () => {
         const name = e.target.name.value;
         const sector = e.target.sectors.value;
         if(sector == 0){
+            toast.warning('Sector is not selected', {
+                position: "bottom-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
             return;
         }else if(!agree){
-            alert('You have not agreed to terms');
+            toast.warning("You haven't agreed to terms", {
+                position: "bottom-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
             return;
-        }
-        addToDb(name, sector, true);
+        }else{
+            toast.success("User Created", {
+                position: "bottom-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            e.target.reset();
+            setAgree(false);
+            addToDb(name, sector, true);
+        }        
     }
 
     // setting up a loading screen before loading the sector catagory
@@ -38,12 +71,12 @@ const Home = () => {
                 <form action="" onSubmit={handleSaveButton}>
                     <div className="name-input-div">
                         <label htmlFor="name">Name :</label>
-                        <input type="text" name="name" id="" />
+                        <input type="text" name="name" id="" required />
                     </div>
                     <div className="sector-selection">
                         <label htmlFor="">Sector : </label>
     {/* ------------------ Sectors selection box will be shown here -------------- */}
-                        <select className="form-select" aria-label="Default select example" name="sectors">
+                        <select className="form-select" aria-label="Default select example" name="sectors" >
                             <option value='0'>Select a Sector</option>
                             {
                                 catagory.map(index => <option
