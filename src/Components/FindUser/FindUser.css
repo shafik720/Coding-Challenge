@@ -5,17 +5,7 @@
     flex-direction: column;
     justify-content: center !important;
 }
-.submit-button2{
-    width: 50%;
-    border: none;
-    box-sizing: border-box;
-    background: #0A2442;
-    color: white;
-    height: 40px;
-    border-radius: 5px;
-    font-size: 18px;
-    margin: 25px auto ;
-}
+
 
 
 /* spinner styles */

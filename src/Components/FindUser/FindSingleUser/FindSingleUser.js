@@ -27,23 +27,27 @@ const FindSingleUser = () => {
             <hr />
             <div className="user-details-div">
                 <table className='table'>
+        {/* Showing users all information that is saved in db with table format */}
                     <tbody>
+                        {/* Showing user's name */}
                         <tr   className=''>
                             <td className='fw-bold text-start'>Name :</td>
                             <td className='strong-text1 text-end'>{user?.userName}</td>
                         </tr>
                         
+                        {/* Showing user's Sectors */}
                         <tr   className=''>
                             <td className='fw-bold text-start'>Sector :</td>
                             <td className='strong-text1 text-end'>{catagory.map(index => <p>{index.deta[0] == user?.catagoryId && index.deta[1]}</p>)}</td>
                         </tr>
+                        {/* Showing user agreement */}
                         <tr   className=''>
                             <td className='fw-bold text-start'>User Agreement :</td>
                             <td className='strong-text1 text-end'>{user?.isAgreed == true && 'Agreed'}</td>
                         </tr>
                     </tbody>
                 </table>
-
+                <button className="edit-button my-5">Edit This User</button>
             </div>
         </div>
     );
