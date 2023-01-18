@@ -27,7 +27,7 @@ const addToDb = (name, id, agree) => {
             theme: "light",
         });
     } else {
-        toast.warning("User already Exist!", {
+        toast.error("User already Exist!", {
             position: "bottom-center",
             autoClose: 3000,
             hideProgressBar: true,

@@ -33,7 +33,7 @@ const FindUser = () => {
                     progress: undefined,
                     theme: "dark",
                 });
-                
+                e.target.reset();
                 document.querySelector('.loading-div').classList.remove('active');
             }
         }, 500);
