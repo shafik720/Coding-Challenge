@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import { getFromDb } from '../Utilities/fakeDb';
 import useCatagory from '../Utilities/Hooks/useCatagory';
 import LoadingSpinner from '../Utilities/LoadingSpinner/LoadingSpinner';
+import { toast } from 'react-toastify';
 
 const EditUser = () => {
     const{userName} = useParams();
@@ -26,8 +27,39 @@ const EditUser = () => {
     //  save button functionality    
     const handleSaveButton = (e) =>{
         e.preventDefault();
+
+        const name = e.target.name.value;
+        const sector = e.target.sectors.value;
+        if(sector == 0){
+            toast.warning('Sector is not selected', {
+                position: "bottom-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            return;
+        }else if(!agree){
+            toast.warning("You haven't agreed to terms", {
+                position: "bottom-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            return;
+        }else{
+            e.target.reset();
+            setAgree(false);
+            console.log('you may go');
+        }        
     }
-    console.log(agree);
     return (
         <div className="edit-div pb-3">
             <p>Edit User Here :  </p>
@@ -59,13 +91,13 @@ const EditUser = () => {
                                         index.deta[0] === 6 ||
                                         index.deta[0] === 13
                                         ? 'strong' : ''}
-                                        selected = {index.deta[0]==user.catagoryId && 'true'}
+                                        selected = {index.deta[0]==user.catagoryId && true}
                                 >{index.deta[1]}</option>)
                             }
                         </select>
                     </div>
                     <div className="form-check">
-                        <input onClick={()=>setAgree(!agree)} className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked={agree && true} onClick={()=>setAgree(!agree)} />
+                        <input onClick={()=>setAgree(!agree)} className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked={agree && true} onChange={()=>setAgree(!agree)} />
                         <label className="form-check-label fw-bold" htmlFor="flexCheckChecked"  >
                             Agree to terms
                         </label>
