@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { addToDb } from '../Utilities/fakeDb';
+import useCatagory from '../Utilities/Hooks/useCatagory';
 import './Home.css';
 
 const Home = () => {
@@ -17,20 +18,13 @@ const Home = () => {
             return;
         }
         addToDb(name, sector, true);
-        // console.log(name, sector);
     }
 
-    const [catagory, setCatagory] = useState([]);
+    // setting a loading screen before loading the sector catagory
     const [isLoading, setIsLoading] = useState(true);
+    // this hook will get all the data for sector catagory
+    const [catagory, setCatagory] = useCatagory(isLoading, setIsLoading);
 
-    useEffect(() => {
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => {
-                setCatagory(data);
-                setIsLoading(false);
-            });
-    }, [isLoading]);
     if (isLoading) {
         return <div>Loading...</div>;
     }
@@ -47,21 +41,6 @@ const Home = () => {
                     </div>
                     <div className="sector-selection">
                         <label htmlFor="">Sector : </label>
-                        {/* <select name="sectors" >
-                            
-                            {
-                                catagory.map(index => <option
-                                    key={index.deta[0]}
-                                    value={index.deta[0]}
-                                    disabled={index.deta[0] == 1 && true}
-                                    className={
-                                        index.deta[0] === 1 ||
-                                            index.deta[0] === 6 ||
-                                            index.deta[0] === 13
-                                            ? 'strong' : ''}
-                                >{index.deta[1]}</option>)
-                            }
-                        </select> */}
     {/* ------------------ Sectors selection box will be shown here -------------- */}
                         <select className="form-select" aria-label="Default select example" name="sectors">
                             <option value='0'>Select a Sector</option>
