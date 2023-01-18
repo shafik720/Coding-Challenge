@@ -54,11 +54,11 @@ const EditUser = () => {
             });
             return;
         }else{
-            editToDb(name, sector, true, userName);
+            editToDb(name, sector, true, userName, user.catagoryId);
             // setAgree(false);
         }        
     }
-    return ( !user ? <div>User not found</div> :  <div className="edit-div pb-3">
+    return ( !user ? <div>User Updated Successfully</div> :  <div className="edit-div pb-3">
     <p>Edit User Here :  </p>
     <hr width="50%" className="mx-auto" />
 

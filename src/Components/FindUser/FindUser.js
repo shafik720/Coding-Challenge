@@ -43,7 +43,7 @@ const FindUser = () => {
         <div className="find-user-div px-3 my-5">
             <form action="" className="find-user-div-form" onSubmit={handleFindSubmit}>
                 <div className="name-input-div text-center">
-                    <label htmlFor="name">Enter the name :</label>
+                    <label htmlFor="name">Enter the name <span className="small-text">(Case sensitve)</span>  :</label>
                     <input type="text" name="name" id="" className="text-center"  required />
                 </div>
                 <div className="loading-div mt-4 mx-auto">

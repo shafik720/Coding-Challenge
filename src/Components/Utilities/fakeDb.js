@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 
 
@@ -41,8 +42,9 @@ const addToDb = (name, id, agree) => {
     }
 }
 
-// edit a user
-const editToDb = (name, id, agree, previousUserName) => {
+//---------------------- edit a user
+
+const editToDb = (name, id, agree, previousUserName, previousCatagoryId) => {
     let dbUser = JSON.parse(sessionStorage.getItem('db-user') || '[]');
 
     // add data to storage
@@ -50,10 +52,12 @@ const editToDb = (name, id, agree, previousUserName) => {
     const userName = name;
     const isAgreed = agree;
 
-    const totalPacakge = { userName, catagoryId, isAgreed };
+    
     const existingUserName = dbUser.find(user => user.userName === userName);
     const existingSector = dbUser.find(user => user.catagoryId === catagoryId);
-    if (existingSector && existingUserName) {        
+    console.log('Previous Catagory Id : ', previousCatagoryId);
+    console.log('New Catagory Id : ', catagoryId);
+    if (previousCatagoryId==catagoryId && existingUserName) {        
         toast.error("You have not changed anything", {
             position: "bottom-center",
             autoClose: 3000,
@@ -66,18 +70,28 @@ const editToDb = (name, id, agree, previousUserName) => {
         });
     } else {
         
-    console.log(existingUserName);
-        // for(let i=0; i<dbUser.length;i++){
-        //     // console.log(dbUser[i].userName==previousUserName);
-        //     if(dbUser[i].userName==previousUserName){
-        //         console.log(i);
-        //         dbUser.splice(i,1);
-        //     }
-        // }
-        
-        // console.log(dbUser);
-        // dbUser.push(totalPacakge);
+        for(let i=0; i<dbUser.length;i++){
+            // console.log(dbUser[i].userName==previousUserName);
+            if(dbUser[i].userName==previousUserName){
+                console.log(i);
+                dbUser.splice(i,1);
+            }
+        }
+        const totalPacakge = { userName, catagoryId, isAgreed };
+        dbUser.push(totalPacakge);
         sessionStorage.setItem('db-user', JSON.stringify(dbUser));
+        window.location.href = `/findSingleUser/${userName}`;
+
+        toast.success("User Updated Successfully", {
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
 }
 
