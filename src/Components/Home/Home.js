@@ -14,13 +14,13 @@ const Home = () => {
         if(sector == 0){
             return;
         }else if(!agree){
-            console.log('You have not agreed to terms');
+            alert('You have not agreed to terms');
             return;
         }
         addToDb(name, sector, true);
     }
 
-    // setting a loading screen before loading the sector catagory
+    // setting up a loading screen before loading the sector catagory
     const [isLoading, setIsLoading] = useState(true);
     // this hook will get all the data for sector catagory
     const [catagory, setCatagory] = useCatagory(isLoading, setIsLoading);

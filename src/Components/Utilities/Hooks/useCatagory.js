@@ -6,7 +6,7 @@ function useCatagory(isLoading, setIsLoading){
         const [catagory, setCatagory] = useState([]);
     
         useEffect(() => {
-            fetch('data.json')
+            fetch('https://raw.githubusercontent.com/shafik720/rest-api/main/catagoryForCodingChallenge.json')
                 .then(res => res.json())
                 .then(data => {
                     setCatagory(data);

@@ -7,24 +7,15 @@ const FindSingleUser = () => {
     const{userName} = useParams();
     
     const user = getFromDb(userName);
-    // console.log(user);
 
-    // const[user, setUser] = useState([]);
-    // const[loading, setLoading] = useState(true);
-    // useEffect(()=>{
-    //     const user = getFromDb(userName);
-    //     console.log(user);
-    //     if(user){
-    //         setLoading(false);
-    //         setUser(user)
-    //     }
-    // },[loading]);
-
-    // if(loading){
-    //     return <div>...loading</div>
-    // }
-
-  
+    // setting up a loading screen before loading the sector catagory
+    const [isLoading, setIsLoading] = useState(true);
+    // this hook will get all the data for sector catagory
+    const [catagory, setCatagory] = useCatagory(isLoading, setIsLoading);
+    console.log(catagory);
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div>
