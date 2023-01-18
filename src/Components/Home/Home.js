@@ -38,19 +38,15 @@ const Home = () => {
             });
             return;
         }else{
-            toast.success("User Created", {
-                position: "bottom-center",
-                autoClose: 3000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-            });
             e.target.reset();
             setAgree(false);
             addToDb(name, sector, true);
+            // let db = addToDb(name, sector, true);
+            // if(db.existed){
+            //     console.log('true');
+            // }else{
+
+            // }
         }        
     }
 

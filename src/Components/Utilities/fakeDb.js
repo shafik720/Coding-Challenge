@@ -1,31 +1,52 @@
+import { toast } from "react-toastify";
 
 
 // this function will add user to database
-const addToDb = (name, id, agree) =>{  
+const addToDb = (name, id, agree) => {
     let dbUser = JSON.parse(sessionStorage.getItem('db-user') || '[]');
 
     // add data to storage
     const catagoryId = id;
     const userName = name;
-    const isAgreed = agree;   
+    const isAgreed = agree;
 
-    const totalPacakge = { userName, catagoryId, isAgreed};
+    const totalPacakge = { userName, catagoryId, isAgreed };
 
-    const existingUser = dbUser.find(user=> user.userName === userName);
-    if(!existingUser){
+    const existingUser = dbUser.find(user => user.userName === userName);
+    if (!existingUser) {
         dbUser.push(totalPacakge);
         sessionStorage.setItem('db-user', JSON.stringify(dbUser));
-    }else{
-        console.log('user already exists !');
+        toast.success("User Created", {
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+    } else {
+        toast.warning("User already Exist!", {
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
+        return { existed: true };
     }
 }
 
 // this function will get user from database
-function getFromDb(name){
+function getFromDb(name) {
     let dbUser = JSON.parse(sessionStorage.getItem('db-user') || '[]');
 
     const userName = name;
-    const existingUser = dbUser.find(user=> user.userName === userName);
+    const existingUser = dbUser.find(user => user.userName === userName);
     // if(!existingUser){
     //     console.log('user not found');
     // }else{
@@ -36,6 +57,6 @@ function getFromDb(name){
 
 
 export {
-    addToDb, 
+    addToDb,
     getFromDb
 }
