@@ -2,17 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getFromDb } from '../../Utilities/fakeDb';
 import useCatagory from '../../Utilities/Hooks/useCatagory';
+import './FindSingleUser.css';
 
 const FindSingleUser = () => {
-    const{userName} = useParams();
-    
+    const { userName } = useParams();
+
     const user = getFromDb(userName);
 
     // setting up a loading screen before loading the sector catagory
     const [isLoading, setIsLoading] = useState(true);
     // this hook will get all the data for sector catagory
     const [catagory, setCatagory] = useCatagory(isLoading, setIsLoading);
-    console.log(catagory);
+    // console.log(catagory);
+    catagory.map(index => console.log(index.deta[1]))
     if (isLoading) {
         return <div>Loading...</div>;
     }
@@ -22,8 +24,17 @@ const FindSingleUser = () => {
             <h5>User Details : </h5>
             <hr />
             <div className="user-details-div">
-                <h2>Name : {user.userName} </h2>
-                <h2>Sectors : {user.sectors} </h2>
+                <div className="aligned-text">
+                    <p>Name : </p>
+                    <p>{user.userName}</p>
+                </div>
+                <div className="aligned-text">
+                    <p>Sector : </p>
+                    <div className=" sector-text d-flex flex-end align-items-center">
+                        {catagory.map(index => <p>{index.deta[0] == user.catagoryId && index.deta[1]}</p>)}
+                    </div>
+                </div>
+
             </div>
         </div>
     );

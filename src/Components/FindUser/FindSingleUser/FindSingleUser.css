@@ -1,0 +1,24 @@
+
+
+.user-details-div{
+    max-width: 250px;
+    margin: 45px 0;
+}
+.user-details-div p{
+    margin-bottom: 0;
+}
+.aligned-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0;
+}
+.aligned-text p:first-child{
+    font-weight: 600;
+    font-size: 18px;
+}
+.aligned-text p:nth-child(2), .sector-text{
+    color: #007ACC;
+    font-weight: 700;
+    font-size: 20px;
+}
