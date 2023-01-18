@@ -41,12 +41,6 @@ const Home = () => {
             e.target.reset();
             setAgree(false);
             addToDb(name, sector, true);
-            // let db = addToDb(name, sector, true);
-            // if(db.existed){
-            //     console.log('true');
-            // }else{
-
-            // }
         }        
     }
 
