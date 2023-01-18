@@ -24,16 +24,19 @@ const FindSingleUser = () => {
             <h5>User Details : </h5>
             <hr />
             <div className="user-details-div">
-                <div className="aligned-text">
-                    <p>Name : </p>
-                    <p>{user.userName}</p>
-                </div>
-                <div className="aligned-text">
-                    <p>Sector : </p>
-                    <div className=" sector-text d-flex flex-end align-items-center">
-                        {catagory.map(index => <p>{index.deta[0] == user.catagoryId && index.deta[1]}</p>)}
-                    </div>
-                </div>
+                <table className='table'>
+                    <tbody>
+                        <tr   className=''>
+                            <td className='fw-bold text-start'>Name :</td>
+                            <td className='strong-text1 text-end'>{user.userName}</td>
+                        </tr>
+                        
+                        <tr   className=''>
+                            <td className='fw-bold text-start'>Sector :</td>
+                            <td className='strong-text1 text-end'>{catagory.map(index => <p>{index.deta[0] == user.catagoryId && index.deta[1]}</p>)}</td>
+                        </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>

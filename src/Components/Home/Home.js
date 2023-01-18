@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { addToDb } from '../Utilities/fakeDb';
 import useCatagory from '../Utilities/Hooks/useCatagory';
+import LoadingSpinner from '../Utilities/LoadingSpinner/LoadingSpinner';
 import './Home.css';
 
 const Home = () => {
@@ -26,7 +27,7 @@ const Home = () => {
     const [catagory, setCatagory] = useCatagory(isLoading, setIsLoading);
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <LoadingSpinner></LoadingSpinner>;
     }
 
     return (
