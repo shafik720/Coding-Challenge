@@ -29,7 +29,7 @@ const EditUser = () => {
     console.log(agree);
     return (
         <div>
-            <h2>Edit User Here : {userName} </h2>
+            <p>Edit User Here :  </p>
 
             {/*----------------- Create user form starts here -------------- */}
             <div className="form-div">
@@ -57,6 +57,7 @@ const EditUser = () => {
                                         index.deta[0] === 6 ||
                                         index.deta[0] === 13
                                         ? 'strong' : ''}
+                                        selected = {index.deta[0]==user.catagoryId && 'true'}
                                 >{index.deta[1]}</option>)
                             }
                         </select>
