@@ -77,11 +77,38 @@ const Home = () => {
                                     disabled={
                                         index.deta[0] === 1 ||
                                         index.deta[0] === 6 ||
+                                        index.deta[0] === 12 ||
+                                        index.deta[0] === 97 ||
+                                        index.deta[0] === 11 ||
+                                        index.deta[0] === 9 ||
+                                        index.deta[0] === 559 ||
+                                        index.deta[0] === 542 ||
+                                        index.deta[0] === 5 ||
+                                        index.deta[0] === 7 ||
+                                        index.deta[0] === 8 ||
+                                        index.deta[0] === 3 ||
+                                        index.deta[0] === 2 ||
+                                        index.deta[0] === 28 ||
+                                        index.deta[0] === 21 ||
                                         index.deta[0] === 13
                                         && true}
+                                        // making subcatagory bold 
                                     className={
                                         index.deta[0] === 1 ||
                                         index.deta[0] === 6 ||
+                                        index.deta[0] === 12 ||
+                                        index.deta[0] === 97 ||
+                                        index.deta[0] === 11 ||
+                                        index.deta[0] === 9 ||
+                                        index.deta[0] === 559 ||
+                                        index.deta[0] === 542 ||
+                                        index.deta[0] === 5 ||
+                                        index.deta[0] === 7 ||
+                                        index.deta[0] === 8 ||
+                                        index.deta[0] === 3 ||
+                                        index.deta[0] === 2 ||
+                                        index.deta[0] === 28 ||
+                                        index.deta[0] === 21 ||
                                         index.deta[0] === 13
                                         ? 'strong' : ''}
                                 >{index.deta[1]}</option>)
