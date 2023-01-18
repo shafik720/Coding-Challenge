@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './EditUser.css';
 import { useParams } from 'react-router';
-import { getFromDb } from '../Utilities/fakeDb';
+import { getFromDb , editToDb } from '../Utilities/fakeDb';
 import useCatagory from '../Utilities/Hooks/useCatagory';
 import LoadingSpinner from '../Utilities/LoadingSpinner/LoadingSpinner';
 import { toast } from 'react-toastify';
@@ -55,9 +55,9 @@ const EditUser = () => {
             });
             return;
         }else{
-            e.target.reset();
+            editToDb(name, sector, true);
             setAgree(false);
-            console.log('you may go');
+            console.log(name, sector);
         }        
     }
     return (
