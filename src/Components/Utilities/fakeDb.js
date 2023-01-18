@@ -57,8 +57,6 @@ const editToDb = (name, id, agree, previousUserName, previousCatagoryId) => {
 
     
     const existingUserName = dbUser.find(user => user.userName === userName);
-    console.log('Previous Catagory Id : ', previousCatagoryId);
-    console.log('New Catagory Id : ', catagoryId);
     if (previousCatagoryId==catagoryId && existingUserName) {        
         toast.error("You have not changed anything or the name already exists !", {
             position: "bottom-center",

@@ -77,3 +77,14 @@
   font-size: 14px;
   font-weight: 400;
 }
+
+/* For mobile responsiveness */
+@media only screen and (max-width:501px){
+  .main-div{
+    background: white;
+    width: 90%;
+    margin: 25px auto;
+    border-radius: 5px;
+    min-height: 500px;
+  }
+}
