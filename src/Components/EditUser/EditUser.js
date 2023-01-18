@@ -12,8 +12,6 @@ const EditUser = () => {
 
     // getting user information from db
     const user = getFromDb(userName);
-    // console.log(user.isAgreed)
-    // setAgree(user.isAgreed);
 
     // setting up a loading screen before loading the sector catagory
     const [isLoading, setIsLoading] = useState(true);
@@ -55,9 +53,8 @@ const EditUser = () => {
             });
             return;
         }else{
-            editToDb(name, sector, true);
+            editToDb(name, sector, true, userName);
             setAgree(false);
-            console.log(name, sector);
         }        
     }
     return (

@@ -42,7 +42,7 @@ const addToDb = (name, id, agree) => {
 }
 
 // edit a user
-const editToDb = (name, id, agree) => {
+const editToDb = (name, id, agree, previousUserName) => {
     let dbUser = JSON.parse(sessionStorage.getItem('db-user') || '[]');
 
     // add data to storage
@@ -51,7 +51,7 @@ const editToDb = (name, id, agree) => {
     const isAgreed = agree;
 
     const totalPacakge = { userName, catagoryId, isAgreed };
-    console.log(dbUser);
+    // console.log(dbUser);
     const existingUserName = dbUser.find(user => user.userName === userName);
     const existingSector = dbUser.find(user => user.catagoryId === catagoryId);
     if (existingUserName && existingSector) {        
@@ -66,6 +66,7 @@ const editToDb = (name, id, agree) => {
             theme: "dark",
         });
     } else {
+        console.log(previousUserName);
         // dbUser.push(totalPacakge);
         // sessionStorage.setItem('db-user', JSON.stringify(dbUser));
     }
