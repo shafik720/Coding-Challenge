@@ -6,24 +6,27 @@ import LoadingSpinner from '../Utilities/LoadingSpinner/LoadingSpinner';
 
 const EditUser = () => {
     const{userName} = useParams();
-    const[agree, setAgree] = useState(false);
+    const[agree, setAgree] = useState(true);
 
     // getting user information from db
     const user = getFromDb(userName);
+    // console.log(user.isAgreed)
+    // setAgree(user.isAgreed);
 
-        // setting up a loading screen before loading the sector catagory
-        const [isLoading, setIsLoading] = useState(true);
-        // this hook will get all the data for sector catagory
-        const [catagory, setCatagory] = useCatagory(isLoading, setIsLoading);
-    
-        if (isLoading) {
-            return <LoadingSpinner></LoadingSpinner>;
-        }
+    // setting up a loading screen before loading the sector catagory
+    const [isLoading, setIsLoading] = useState(true);
+    // this hook will get all the data for sector catagory
+    const [catagory, setCatagory] = useCatagory(isLoading, setIsLoading);
 
-        //  save button functionality    
-        const handleSaveButton = (e) =>{
-            e.preventDefault();
-        }
+    if (isLoading) {
+        return <LoadingSpinner></LoadingSpinner>;
+    }
+
+    //  save button functionality    
+    const handleSaveButton = (e) =>{
+        e.preventDefault();
+    }
+    console.log(agree);
     return (
         <div>
             <h2>Edit User Here : {userName} </h2>
@@ -33,7 +36,7 @@ const EditUser = () => {
                 <form action="" onSubmit={handleSaveButton}>
                     <div className="name-input-div">
                         <label htmlFor="name">Name :</label>
-                        <input type="text" name="name" id="" required />
+                        <input defaultValue={user.userName} type="text" name="name" id="" required />
                     </div>
                     <div className="sector-selection">
                         <label htmlFor="">Sector : </label>
@@ -59,8 +62,8 @@ const EditUser = () => {
                         </select>
                     </div>
                     <div className="form-check">
-                        <input onClick={()=>setAgree(!agree)} className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                        <label className="form-check-label fw-bold" htmlFor="flexCheckChecked">
+                        <input onClick={()=>setAgree(!agree)} className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked={agree && true} onClick={()=>setAgree(!agree)} />
+                        <label className="form-check-label fw-bold" htmlFor="flexCheckChecked"  >
                             Agree to terms
                         </label>
                     </div>
