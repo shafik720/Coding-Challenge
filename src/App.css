@@ -45,6 +45,11 @@
   border-radius: 5px;
   min-height: 500px;
 }
+.main-div.forest{
+  background: url('./Components/Utilities/img/bg.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .main-div-second{
   padding: 15px;
 }

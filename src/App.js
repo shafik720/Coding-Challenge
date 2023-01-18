@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from './Components/Home/Home';
-import { Route, Routes } from 'react-router';
+import { Route, Routes, useLocation } from 'react-router';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import FindUser from './Components/FindUser/FindUser';
 import Header from './Components/Header/Header';
@@ -9,9 +9,24 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FindSingleUser from './Components/FindUser/FindSingleUser/FindSingleUser';
 import EditUser from './Components/EditUser/EditUser';
+import { useEffect } from 'react';
 
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // this function to be triggered on route change and it will change the background
+    function handleRouteChange() {
+      console.log(location.pathname);
+      if(location.pathname == '/findUser'){
+        document.querySelector('.main-div').classList.add('forest');
+      }else{
+        document.querySelector('.main-div').classList.remove('forest');
+      }
+    }
+    handleRouteChange();
+  }, [location]);
   return (
     <div>
       <div className="main-div">
