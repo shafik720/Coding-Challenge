@@ -11,17 +11,19 @@ const FindSingleUser = () => {
 
     // setting up a loading screen before loading the sector catagory
     const [isLoading, setIsLoading] = useState(true);
+
     // this hook will get all the data for sector catagory
     const [catagory, setCatagory] = useCatagory(isLoading, setIsLoading);
-    // console.log(catagory);
+
     catagory.map(index => console.log(index.deta[1]))
+
     if (isLoading) {
         return <div>Loading...</div>;
     }
 
     return (
         <div>
-            <h5>User Details : </h5>
+            <h5 className='mt-4'>User Details : </h5>
             <hr />
             <div className="user-details-div">
                 <table className='table'>
@@ -34,6 +36,10 @@ const FindSingleUser = () => {
                         <tr   className=''>
                             <td className='fw-bold text-start'>Sector :</td>
                             <td className='strong-text1 text-end'>{catagory.map(index => <p>{index.deta[0] == user.catagoryId && index.deta[1]}</p>)}</td>
+                        </tr>
+                        <tr   className=''>
+                            <td className='fw-bold text-start'>User Agreement :</td>
+                            <td className='strong-text1 text-end'>{user.isAgreed == true && 'Agreed'}</td>
                         </tr>
                     </tbody>
                 </table>

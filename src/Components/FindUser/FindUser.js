@@ -26,7 +26,7 @@ const FindUser = () => {
                 toast.error('User Not Found', {
                     position: "bottom-center",
                     autoClose: 3000,
-                    hideProgressBar: false,
+                    hideProgressBar: true,
                     closeOnClick: true,
                     pauseOnHover: true,
                     draggable: true,
