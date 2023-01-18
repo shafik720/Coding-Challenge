@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './EditUser.css';
 import { useParams } from 'react-router';
 import { getFromDb } from '../Utilities/fakeDb';
 import useCatagory from '../Utilities/Hooks/useCatagory';
@@ -28,8 +29,9 @@ const EditUser = () => {
     }
     console.log(agree);
     return (
-        <div>
+        <div className="edit-div pb-3">
             <p>Edit User Here :  </p>
+            <hr width="50%" className="mx-auto" />
 
             {/*----------------- Create user form starts here -------------- */}
             <div className="form-div">
@@ -68,7 +70,7 @@ const EditUser = () => {
                             Agree to terms
                         </label>
                     </div>
-                    <button className="submit-button" type="submit">Save</button>
+                    <button className="submit-button" type="submit">Edit & Save</button>
                 </form>
             </div>
 {/*- ---------------------- Create user form ends here ------------------------- */}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { getFromDb } from '../../Utilities/fakeDb';
 import useCatagory from '../../Utilities/Hooks/useCatagory';
+import LoadingSpinner from '../../Utilities/LoadingSpinner/LoadingSpinner';
 import './FindSingleUser.css';
 
 const FindSingleUser = () => {
@@ -18,7 +19,7 @@ const FindSingleUser = () => {
     const [catagory, setCatagory] = useCatagory(isLoading, setIsLoading);
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <LoadingSpinner></LoadingSpinner>;
     }
 
     // Edit functionality
