@@ -51,10 +51,9 @@ const editToDb = (name, id, agree, previousUserName) => {
     const isAgreed = agree;
 
     const totalPacakge = { userName, catagoryId, isAgreed };
-    // console.log(dbUser);
     const existingUserName = dbUser.find(user => user.userName === userName);
     const existingSector = dbUser.find(user => user.catagoryId === catagoryId);
-    if (existingUserName && existingSector) {        
+    if (existingSector && existingUserName) {        
         toast.error("You have not changed anything", {
             position: "bottom-center",
             autoClose: 3000,
@@ -66,9 +65,19 @@ const editToDb = (name, id, agree, previousUserName) => {
             theme: "dark",
         });
     } else {
-        console.log(previousUserName);
+        
+    console.log(existingUserName);
+        // for(let i=0; i<dbUser.length;i++){
+        //     // console.log(dbUser[i].userName==previousUserName);
+        //     if(dbUser[i].userName==previousUserName){
+        //         console.log(i);
+        //         dbUser.splice(i,1);
+        //     }
+        // }
+        
+        // console.log(dbUser);
         // dbUser.push(totalPacakge);
-        // sessionStorage.setItem('db-user', JSON.stringify(dbUser));
+        sessionStorage.setItem('db-user', JSON.stringify(dbUser));
     }
 }
 
