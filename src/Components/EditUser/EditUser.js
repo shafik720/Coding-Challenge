@@ -6,6 +6,7 @@ import LoadingSpinner from '../Utilities/LoadingSpinner/LoadingSpinner';
 
 const EditUser = () => {
     const{userName} = useParams();
+    const[agree, setAgree] = useState(false);
 
     // getting user information from db
     const user = getFromDb(userName);
@@ -18,9 +19,55 @@ const EditUser = () => {
         if (isLoading) {
             return <LoadingSpinner></LoadingSpinner>;
         }
+
+        //  save button functionality    
+        const handleSaveButton = (e) =>{
+            e.preventDefault();
+        }
     return (
         <div>
             <h2>Edit User Here : {userName} </h2>
+
+            {/*----------------- Create user form starts here -------------- */}
+            <div className="form-div">
+                <form action="" onSubmit={handleSaveButton}>
+                    <div className="name-input-div">
+                        <label htmlFor="name">Name :</label>
+                        <input type="text" name="name" id="" required />
+                    </div>
+                    <div className="sector-selection">
+                        <label htmlFor="">Sector : </label>
+    {/* ------------------ Sectors selection box will be shown here -------------- */}
+                        <select className="form-select" aria-label="Default select example" name="sectors" >
+                            <option value='0'>Select a Sector</option>
+                            {
+                                catagory.map(index => <option
+                                    key={index.deta[0]}
+                                    value={index.deta[0]}
+                                    disabled={
+                                        index.deta[0] === 1 ||
+                                        index.deta[0] === 6 ||
+                                        index.deta[0] === 13
+                                        && true}
+                                    className={
+                                        index.deta[0] === 1 ||
+                                        index.deta[0] === 6 ||
+                                        index.deta[0] === 13
+                                        ? 'strong' : ''}
+                                >{index.deta[1]}</option>)
+                            }
+                        </select>
+                    </div>
+                    <div className="form-check">
+                        <input onClick={()=>setAgree(!agree)} className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                        <label className="form-check-label fw-bold" htmlFor="flexCheckChecked">
+                            Agree to terms
+                        </label>
+                    </div>
+                    <button className="submit-button" type="submit">Save</button>
+                </form>
+            </div>
+{/*- ---------------------- Create user form ends here ------------------------- */}
         </div>
     );
 };

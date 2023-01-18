@@ -6,6 +6,7 @@ import LoadingSpinner from '../Utilities/LoadingSpinner/LoadingSpinner';
 import './Home.css';
 
 const Home = () => {
+    // this will toggle for user agreement check box
     const[agree, setAgree] = useState(false);
 
     // when user clicked save button this function will be triggered 
@@ -57,6 +58,7 @@ const Home = () => {
         <div className="home-div">
             <h2>Please enter your name and pick the Sectors you are currently involved in : </h2>
             <hr />
+    {/*----------------- Create user form starts here -------------- */}
             <div className="form-div">
                 <form action="" onSubmit={handleSaveButton}>
                     <div className="name-input-div">
@@ -95,6 +97,7 @@ const Home = () => {
                     <button className="submit-button" type="submit">Save</button>
                 </form>
             </div>
+{/*- ---------------------- Create user form ends here ------------------------- */}
         </div>
     );
 };
