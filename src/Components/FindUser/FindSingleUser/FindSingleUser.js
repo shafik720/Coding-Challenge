@@ -30,16 +30,16 @@ const FindSingleUser = () => {
                     <tbody>
                         <tr   className=''>
                             <td className='fw-bold text-start'>Name :</td>
-                            <td className='strong-text1 text-end'>{user.userName}</td>
+                            <td className='strong-text1 text-end'>{user?.userName}</td>
                         </tr>
                         
                         <tr   className=''>
                             <td className='fw-bold text-start'>Sector :</td>
-                            <td className='strong-text1 text-end'>{catagory.map(index => <p>{index.deta[0] == user.catagoryId && index.deta[1]}</p>)}</td>
+                            <td className='strong-text1 text-end'>{catagory.map(index => <p>{index.deta[0] == user?.catagoryId && index.deta[1]}</p>)}</td>
                         </tr>
                         <tr   className=''>
                             <td className='fw-bold text-start'>User Agreement :</td>
-                            <td className='strong-text1 text-end'>{user.isAgreed == true && 'Agreed'}</td>
+                            <td className='strong-text1 text-end'>{user?.isAgreed == true && 'Agreed'}</td>
                         </tr>
                     </tbody>
                 </table>
