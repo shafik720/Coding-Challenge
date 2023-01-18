@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+
 import { toast } from "react-toastify";
 
 
@@ -27,6 +27,9 @@ const addToDb = (name, id, agree) => {
             progress: undefined,
             theme: "light",
         });
+        setTimeout(() => {
+            window.location.href = `/findSingleUser/${userName}`;
+            }, 500);
     } else {
         toast.error("User already Exist!", {
             position: "bottom-center",
@@ -56,19 +59,8 @@ const editToDb = (name, id, agree, previousUserName, previousCatagoryId) => {
     const existingUserName = dbUser.find(user => user.userName === userName);
     console.log('Previous Catagory Id : ', previousCatagoryId);
     console.log('New Catagory Id : ', catagoryId);
-    if (existingUserName) {        
-        toast.error(" Name already Exists !", {
-            position: "bottom-center",
-            autoClose: 3000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-        });
-    } else if (previousCatagoryId==catagoryId && existingUserName) {        
-        toast.error("You have not changed anything or the Name already Exists !", {
+    if (previousCatagoryId==catagoryId && existingUserName) {        
+        toast.error("You have not changed anything or the name already exists !", {
             position: "bottom-center",
             autoClose: 3000,
             hideProgressBar: true,
@@ -90,7 +82,6 @@ const editToDb = (name, id, agree, previousUserName, previousCatagoryId) => {
         const totalPacakge = { userName, catagoryId, isAgreed };
         dbUser.push(totalPacakge);
         sessionStorage.setItem('db-user', JSON.stringify(dbUser));
-        window.location.href = `/findSingleUser/${userName}`;
 
         toast.success("User Updated Successfully", {
             position: "bottom-center",
@@ -102,6 +93,9 @@ const editToDb = (name, id, agree, previousUserName, previousCatagoryId) => {
             progress: undefined,
             theme: "light",
         });
+        setTimeout(() => {
+        window.location.href = `/findSingleUser/${userName}`;
+        }, 400);
     }
 }
 
