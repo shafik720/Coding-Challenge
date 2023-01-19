@@ -53,7 +53,7 @@ const FindSingleUser = () => {
                         </tr>
                     </tbody>
                 </table>
-                <button onClick={()=>handleEditButton(user.userName)} className="edit-button my-5">Edit This User</button>
+                <button onClick={()=>handleEditButton(user.userName)} className="edit-button my-3">Edit This User</button>
             </div>
         </div>
     );

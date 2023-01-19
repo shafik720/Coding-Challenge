@@ -18,11 +18,13 @@ function App() {
   useEffect(() => {
     // this function to be triggered on route change and it will change the background
     function handleRouteChange() {
-      console.log(location.pathname);
-      if(location.pathname == '/findUser'){
+      if(location.pathname == '/findUser' || location.pathname.includes('/findSingleUser')){
         document.querySelector('.main-div').classList.add('forest');
       }else{
         document.querySelector('.main-div').classList.remove('forest');
+      }
+      if(location.pathname.includes('/findSingleUser')){
+        console.log('got ya');
       }
     }
     handleRouteChange();
