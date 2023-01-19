@@ -45,12 +45,13 @@
   border-radius: 5px;
   min-height: 500px;
   
-  
+  background: white;
   background-image: url('./Components/Utilities/img/bg2.jpg');
   background-size: cover;
   background-position: top;
 }
 .main-div.forest{
+  background: white;
   background: url('./Components/Utilities/img/bg.jpg') no-repeat;
   background-size: cover;
   background-position: center;
